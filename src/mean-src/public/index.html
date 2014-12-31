@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="/javascripts/angular.js"></script> 
+	<script  type="text/javascript"  src="/javascripts/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/javascripts/app.js"></script>
+	<script>
+	function buy(id) {
+		var iid = id.substr(0, 1);
+		var start = id.substr(1, 10);
+		var sdate = new Date(start);
+		var end = id.substr(11,10);
+		var edate = new Date(end);
+		var cur = new Date();
+		if(sdate<cur&&(edate>cur||edate==" ")
+		{
+			//window.location = "http://www.google.com/search?q=" + ;
+			window.location = "http://localhost:8080/OrderManagementApp/index.jsp?pid="+iid;			
+			alert(iid);
+		}
+		else
+		{
+			alert("item invalid!!");
+			alert(sdate);
+			alert(cur);
+		}
+		
+	}
+	</script>
+	
+	<style>
+#headr {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:900px;
+    width:15%;
+    float:left;
+    padding:5px;
+	zoom: 1;
+	font-size: 20px;
+	
+}
+#page-content-wrapper {
+	text-align:center;
+}
+
+
+</style>
+</head>
+	<body ng-app='CatalogApplication'>
+		<div id="headr">
+			<h1>Catalog Application</h1>
+		</div>
+		<!--<div id="wrapper">-->
+		
+			<div id="nav" ui-view='nav'>
+
+			</div>
+			<div id="page-content-wrapper" ui-view='container'>
+				
+			</div>
+		
+		<!--</div>-->
+	</body>
+</html>

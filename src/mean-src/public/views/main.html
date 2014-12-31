@@ -1,0 +1,12 @@
+<div align="center">
+	<h1>{{item.cat}}</h1>
+<div class="database" ng-repeat="item in products">
+<h1><a ui-sref="root.product({catid: catID, pid: item.uid})">{{item.name}}</a></h1>
+<h2><img height=300 width=200 ng-src={{item.image}}></h2>
+<span>{{item.description}}</span>
+<span class="price">{{item.price}}</span>
+
+<p></p>
+</div>
+</div>
+</div>

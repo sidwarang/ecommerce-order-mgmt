@@ -1,0 +1,60 @@
+<div align="center">
+<h1>{{item[0].name}}</h1>
+<h3>{{item[0].cat}}</h3>
+
+<div class="col-sm-9 col-md-10 main">
+	<div>
+		<div class="table-responsive">
+            <table class="table table-striped">
+              
+              	<tr>
+                	<td><img height=300 width=200 src ={{item[0].image}}></td>
+				
+					<td>
+						<ul>
+							<li>Item name:{{item[0].name}}</li>
+							<div ng-if="item[0].cat == 'shirt' ">						
+								<li>Type:{{item[0].type}}</li>
+								<li>Color:{{item[0].color}}</li>
+								<li>Size:{{item[0].size}}</li>
+								<li>Fabric:{{item[0].fabric}}</li>
+							</div>
+							<div ng-if="item[0].cat == 'laptop' ">
+								<li>screen:{{item[0].screen}}</li>
+								<li>processor:{{item[0].processor}}</li>
+								<li>ram:{{item[0].ram}}</li>
+								<li>clockspeed:{{item[0].clockspeed}}</li>
+								<li>battery life:{{item[0].batterylife}}</li>
+								<li>rating:{{item[0].rating}}</li>
+								<li>status:{{item[0].newOrOld}}</li>
+							</div>
+							<div ng-if="item[0].cat == 'movies' ">
+								<li>director:{{item[0].director}}</li>
+								<li>length:{{item[0].length}}</li>
+								<li>release date:{{item[0].releasedate}}</li>
+								<li>genre:{{item[0].genre}}</li>
+								<li>rating:{{item[0].rating}}</li>
+								<li>rated:{{item[0].rated}}</li>
+								<li>format:{{item[0].format}}</li>
+							</div>
+							<p>
+								<p>price:<a style="color:red;margin-left:30px;">{{item[0].price}}</a></p>
+								<form action="http://localhost:8080/OrderManagementApp/index.jsp" method="post">
+									<input type="hidden" name="pid" value={{item[0].pid}}>
+									<input type="submit" name="buy" ng-if="item[0].valid=='true'"  id="buybtn" value="BUY NOW">
+									<input type="button"  ng-if="item[0].valid=='false'"   value="Product Not Avaiable ">
+								</form>
+							</p>
+						</ul>
+					
+					</td>
+				</tr>
+				<div>
+					<p>Description: {{item[0].description}}</p>
+				</div>
+       		</table>
+		</div>
+	</div>
+</div>
+					
+</div>
